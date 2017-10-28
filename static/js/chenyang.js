@@ -8,6 +8,8 @@
         initStages();
         initCircles();
         animate();
+        markHomeNavigation();
+        showHome();
     }
     // Init Canvas
     function initStages() {
@@ -69,7 +71,10 @@
             }
         }
     }
-
+    function markHomeNavigation(){
+		document.getElementsByClassName('li_home')[0].classList.add("mark_navigation");
+		document.getElementsByClassName('li_home')[0].classList.remove("li_header");
+    }
     function explode() {
         for(var i= 0, l=textPixels.length; i<l; i++) {
             tweenCircle(circles[i], 'out');
@@ -83,5 +88,36 @@
     window.onload = function() { init() };
 })();
 function showAbout(){
+	markNavigation();
+	document.getElementsByClassName('li_about')[0].classList.add("mark_navigation");
+	document.getElementsByClassName('li_about')[0].classList.remove("li_header");
     document.getElementById("content").innerHTML = "<div id='about'>关于我：<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;web前端小菜鸟一枚<br/><br/><br/>建站原由：<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;记录个人生活<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;记录个人工作<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;记录个人学习<br/><br/><br/>站点相关：<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;生活<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;手作<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;前端<br/><br/><br/><br/><br/>2017年10月27日建站</div>";
+}
+function showLife(){
+	markNavigation();
+	document.getElementsByClassName('li_life')[0].classList.add("mark_navigation");
+	document.getElementsByClassName('li_life')[0].classList.remove("li_header");
+    document.getElementById("content").innerHTML = "正在建设中...";
+}
+function showWork(){
+	markNavigation();
+	document.getElementsByClassName('li_work')[0].classList.add("mark_navigation");
+	document.getElementsByClassName('li_work')[0].classList.remove("li_header");
+    document.getElementById("content").innerHTML = "正在建设中...";
+}
+function showArchives(){
+	markNavigation();
+	document.getElementsByClassName('li_archives')[0].classList.add("mark_navigation");
+	document.getElementsByClassName('li_archives')[0].classList.remove("li_header");
+    document.getElementById("content").innerHTML = "正在建设中...";
+}
+function showHome(){
+	markNavigation();
+	document.getElementsByClassName('li_home')[0].classList.add("mark_navigation");
+	document.getElementsByClassName('li_home')[0].classList.remove("li_header");
+    document.getElementById("content").innerHTML = "<div id='life'><div id='life_left'><img src='http://oyiws5ev9.bkt.clouddn.com/-6d508563eb2df07d.jpg'/>欢迎来到我的个人博客</div><div id='life_right'></div></div>";
+}
+function markNavigation(){
+	document.getElementsByClassName('mark_navigation')[0].classList.add("li_header")
+	document.getElementsByClassName('mark_navigation')[0].classList.remove("mark_navigation")
 }
